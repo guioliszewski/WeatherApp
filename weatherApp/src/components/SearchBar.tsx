@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 
-export const searchBar = ({
+export const SearchBar = ({
   onSearch,
 }: {
   onSearch: (city: string) => void;
@@ -20,7 +20,7 @@ export const searchBar = ({
         value={city}
         onChange={(e) => setCity(e.target.value)}
         placeholder="Digite o nome da cidade"
-        className="px-4 py-2 border rounded-lg"
+        className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2 border"
       />
       <button
         type="submit"
