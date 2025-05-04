@@ -1,38 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-type weatherData = {
-  name: string;
-  main: {
-    temp: number;
-    humidity: number;
-  };
-  weather: {
-    description: string;
-    icon: string;
-  }[];
-  feelsLike: number;
-  wind: {
-    speed: number;
-  };
-};
-
-type forecastData = {
-  list: {
-    dt: number;
-    main: {
-      temp: number;
-    };
-    weather: {
-      icon: string;
-    }[];
-  }[];
-};
-
 function App() {
   return (
-    <div className="App">
-      <h1>testing</h1>
+    <div className="min-h-screen bg-gray-100 p-4">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-2xl font-bold mb-4">Weather App</h1>
+      </div>
     </div>
   );
 }
