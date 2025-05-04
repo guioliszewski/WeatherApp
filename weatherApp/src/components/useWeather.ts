@@ -10,4 +10,27 @@ export const useWeather = () => {
   const [forecast, setForecast] = useState<forecastData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const fetch = async (city: string) => {
+    setLoading(true);
+    try {
+      const weatherResponse = await axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+      );
+
+      setWeather(weatherResponse.data);
+
+      const forecastResponse = await axios.get(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
+      );
+
+      setForecast(forecastResponse.data);
+    } catch (err) {
+      setError("Cidade não encontrada. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { weather, forecast, loading, error, fetch };
 };
