@@ -2,7 +2,7 @@ import { WeatherData } from "../types/weather";
 
 export const WeatherCard = ({ data }: { data: WeatherData }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white p-6 rounded-xl shadow-md">
       <h2 className="text-2xl font-bold">{data.name}</h2>
       <div className="flex items-center">
         <img
